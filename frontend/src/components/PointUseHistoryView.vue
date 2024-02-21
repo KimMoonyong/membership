@@ -26,8 +26,6 @@
                 { text: "agreementId", value: "agreementId" },
                 { text: "usePoint", value: "usePoint" },
                 { text: "useDate", value: "useDate" },
-                { text: "userPoint", value: "userPoint" },
-                { text: "agreePoint", value: "agreePoint" },
                 { text: "usePointStatus", value: "usePointStatus" },
             ],
             pointUseHistory : [],

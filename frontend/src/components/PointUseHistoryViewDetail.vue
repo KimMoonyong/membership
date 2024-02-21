@@ -19,12 +19,6 @@
                 <Date label="UseDate" v-model="item.useDate" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <Number label="UserPoint" v-model="item.userPoint" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <Number label="AgreePoint" v-model="item.agreePoint" :editMode="editMode" @change="change" />
-            </div>
-            <div>
                 <String label="UsePointStatus" v-model="item.usePointStatus" :editMode="editMode" @change="change" />
             </div>
         </v-card-text>

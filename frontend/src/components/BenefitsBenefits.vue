@@ -38,7 +38,7 @@
                     text
                     @click="save"
                 >
-                저장
+                    BenefitsRegistration
                 </v-btn>
                 <v-btn
                     color="primary"

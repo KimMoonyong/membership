@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.*;
 import lombok.Data;
 import membershipt.BenefitsApplication;
+import membershipt.domain.BenefitsRegistered;
 
 @Entity
 @Table(name = "Benefits_table")
@@ -24,6 +25,12 @@ public class Benefits {
     private Integer userPoint;
 
     private Integer agreePoint;
+
+    @PostPersist
+    public void onPostPersist() {
+        BenefitsRegistered benefitsRegistered = new BenefitsRegistered(this);
+        benefitsRegistered.publishAfterCommit();
+    }
 
     public static BenefitsRepository repository() {
         BenefitsRepository benefitsRepository = BenefitsApplication.applicationContext.getBean(
@@ -81,32 +88,6 @@ public class Benefits {
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void additionalBenefits(
-        RegisteredAgreement registeredAgreement
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Benefits benefits = new Benefits();
-        repository().save(benefits);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(registeredAgreement.get???()).ifPresent(benefits->{
-            
-            benefits // do something
-            repository().save(benefits);
-
-
-         });
-        */
-
-    }
-
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
     public static void modifyBenefits(ModifiedAgreement modifiedAgreement) {
         //implement business logic here:
 
@@ -119,6 +100,30 @@ public class Benefits {
         /** Example 2:  finding and process
         
         repository().findById(modifiedAgreement.get???()).ifPresent(benefits->{
+            
+            benefits // do something
+            repository().save(benefits);
+
+
+         });
+        */
+
+    }
+
+    //>>> Clean Arch / Port Method
+    //<<< Clean Arch / Port Method
+    public static void modifyBenefits(RegisteredAgreement registeredAgreement) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        Benefits benefits = new Benefits();
+        repository().save(benefits);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(registeredAgreement.get???()).ifPresent(benefits->{
             
             benefits // do something
             repository().save(benefits);

@@ -59,24 +59,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='RegisteredAgreement'"
-    )
-    public void wheneverRegisteredAgreement_AdditionalBenefits(
-        @Payload RegisteredAgreement registeredAgreement
-    ) {
-        RegisteredAgreement event = registeredAgreement;
-        System.out.println(
-            "\n\n##### listener AdditionalBenefits : " +
-            registeredAgreement +
-            "\n\n"
-        );
-
-        // Sample Logic //
-        Benefits.additionalBenefits(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='ModifiedAgreement'"
     )
     public void wheneverModifiedAgreement_ModifyBenefits(
@@ -85,6 +67,24 @@ public class PolicyHandler {
         ModifiedAgreement event = modifiedAgreement;
         System.out.println(
             "\n\n##### listener ModifyBenefits : " + modifiedAgreement + "\n\n"
+        );
+
+        // Sample Logic //
+        Benefits.modifyBenefits(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='RegisteredAgreement'"
+    )
+    public void wheneverRegisteredAgreement_ModifyBenefits(
+        @Payload RegisteredAgreement registeredAgreement
+    ) {
+        RegisteredAgreement event = registeredAgreement;
+        System.out.println(
+            "\n\n##### listener ModifyBenefits : " +
+            registeredAgreement +
+            "\n\n"
         );
 
         // Sample Logic //

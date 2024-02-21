@@ -20,7 +20,5 @@ public class PointUseHistory {
     private String agreementId;
     private Integer usePoint;
     private Date useDate;
-    private Integer userPoint;
-    private Integer agreePoint;
     private String usePointStatus;
 }

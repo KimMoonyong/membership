@@ -43,22 +43,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Point
+  name: point
   labels:
-    app: Point
+    app: point
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Point
+      app: point
   template:
     metadata:
       labels:
-        app: Point
+        app: point
     spec:
       containers:
-        - name: Point
-          image: username/Point:latest
+        - name: point
+          image: username/point:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -83,22 +83,22 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Agreement
+  name: agreement
   labels:
-    app: Agreement
+    app: agreement
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: Agreement
+      app: agreement
   template:
     metadata:
       labels:
-        app: Agreement
+        app: agreement
     spec:
       containers:
-        - name: Agreement
-          image: username/Agreement:latest
+        - name: agreement
+          image: username/agreement:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -182,15 +182,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Point
+  name: point
   labels:
-    app: Point
+    app: point
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Point
+    app: point
 
 
 ---
@@ -199,15 +199,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: Agreement
+  name: agreement
   labels:
-    app: Agreement
+    app: agreement
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: Agreement
+    app: agreement
 
 
 ---

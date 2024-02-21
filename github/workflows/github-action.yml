@@ -30,8 +30,8 @@ jobs:
       - name: Build Maven Projects
         run: |
           mvn clean package -f ./UserApp/pom.xml
-          mvn clean package -f ./Point/pom.xml
-          mvn clean package -f ./Agreement/pom.xml
+          mvn clean package -f ./point/pom.xml
+          mvn clean package -f ./agreement/pom.xml
           mvn clean package -f ./Benefits/pom.xml
 
       - name: Docker Build and push for UserApp
@@ -47,7 +47,7 @@ jobs:
       - name: Docker Build and push for Point
         uses: docker/build-push-action@v4
         with:
-          context: ./Point
+          context: ./point
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
@@ -57,7 +57,7 @@ jobs:
       - name: Docker Build and push for Agreement
         uses: docker/build-push-action@v4
         with:
-          context: ./Agreement
+          context: ./agreement
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |

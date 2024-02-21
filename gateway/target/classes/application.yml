@@ -13,11 +13,11 @@ spring:
           uri: http://localhost:8082
           predicates:
             - Path=, 
-        - id: Point
+        - id: point
           uri: http://localhost:8083
           predicates:
             - Path=/points/**, 
-        - id: Agreement
+        - id: agreement
           uri: http://localhost:8084
           predicates:
             - Path=/agreements/**, 
@@ -53,11 +53,11 @@ spring:
           uri: http://userApp:8080
           predicates:
             - Path=, 
-        - id: Point
+        - id: point
           uri: http://point:8080
           predicates:
             - Path=/points/**, 
-        - id: Agreement
+        - id: agreement
           uri: http://agreement:8080
           predicates:
             - Path=/agreements/**, 

@@ -21,8 +21,8 @@ cd /bin
 See the README.md files inside the each microservices directory:
 
 - UserApp
-- Point
-- Agreement
+- point
+- agreement
 - Benefits
 
 
@@ -36,17 +36,17 @@ mvn spring-boot:run
 - UserApp
 ```
 ```
-- Point
+- point
 ```
- http :8088/points id="id" usePoint="UsePoint" userId="UserId" agreementId="AgreementID" useDate="UseDate" usePointStatus="UsePointStatus" 
+ http :8088/points id="id" usePoint="usePoint" userId="userId" agreementId="agreementId" useDate="useDate" usePointStatus="usePointStatus" 
 ```
-- Agreement
+- agreement
 ```
- http :8088/agreements id="id" agreementName="AgreementName" agreementId="AgreementId" agreePoint="   AgreePoint" 
+ http :8088/agreements id="id" agreementName="agreementName" agreementId="agreementId" agreePoint="   agreePoint" 
 ```
 - Benefits
 ```
- http :8088/benefits id="id" userId="UserId" agreementId="AgreementId" userPoint=" UserPoint" agreePoint="AgreePoint" 
+ http :8088/benefits id="id" userId="userId" agreementId="agreementId" userPoint=" userPoint" agreePoint="agreePoint" 
 ```
 
 

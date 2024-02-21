@@ -15,7 +15,7 @@ public interface BenefitsRepository
     @Query(
         value = "select benefits " +
         "from Benefits benefits " +
-        "where(:UserId is null or benefits.UserId like %:UserId%) and (:AgreementId is null or benefits.AgreementId like %:AgreementId%)"
+        "where(:userId is null or benefits.userId like %:userId%) and (:agreementId is null or benefits.agreementId like %:agreementId%)"
     )
     List<Benefits> findByCheckBenefits(
         String userId,
