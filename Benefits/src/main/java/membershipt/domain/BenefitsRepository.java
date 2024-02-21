@@ -11,15 +11,4 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 //<<< PoEAA / Repository
 @RepositoryRestResource(collectionResourceRel = "benefits", path = "benefits")
 public interface BenefitsRepository
-    extends PagingAndSortingRepository<Benefits, Long> {
-    @Query(
-        value = "select benefits " +
-        "from Benefits benefits " +
-        "where(:UserId is null or benefits.UserId like %:UserId%) and (:AgreementId is null or benefits.AgreementId like %:AgreementId%)"
-    )
-    List<Benefits> findByCheckBenefits(
-        String userId,
-        String agreementId,
-        Pageable pageable
-    );
-}
+    extends PagingAndSortingRepository<Benefits, Long> {}
